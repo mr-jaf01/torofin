@@ -1,0 +1,3 @@
+<div>
+    Rewards component
+</div>
