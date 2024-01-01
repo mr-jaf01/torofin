@@ -40,7 +40,6 @@ class transferServices {
                     ];
 
                     return json_encode($message);
-    
 
                 }
                 else

@@ -1,0 +1,27 @@
+.card-border-radius
+{
+    border-radius: 19px;
+}
+
+.progress-bar {
+    height: 3px;
+    width: 0;
+    background-color: #152235;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: width 1s ease; /* Adjust the duration (1s) as needed */
+}
+
+
+/* Hide the number spinner (arrows) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}

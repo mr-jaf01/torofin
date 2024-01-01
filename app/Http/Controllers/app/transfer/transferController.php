@@ -40,12 +40,12 @@ class transferController extends Controller
         if($message->status === 'success')
         {   
             $status = $message->message;
-            return view('app.transfer.success', compact('status'));
+            return view('app.successanderror.success', compact('status'));
         }
         else
         {
             $status = $message->message;
-            return view('app.transfer.error', compact('status'));
+            return view('app.successanderror.error', compact('status'));
         }
         
     }

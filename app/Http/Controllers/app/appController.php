@@ -36,4 +36,29 @@ class appController extends Controller
         $wallet = $userServices->getUserWallet(Auth::user()->id);
         return view('app.profile', compact('wallet'));
     }
+
+    public function transactionStatus(Request $request)
+    {
+        $message = urldecode($request->status);
+
+        $message = json_decode($message);
+        
+        if($message->status === 'success')
+        {   
+            $status = $message->message;
+            return view('app.successanderror.success', compact('status'));
+        }
+        else
+        {
+            $status = $message->message;
+            return view('app.successanderror.error', compact('status'));
+        }
+        
+    }
+
+    public function transactionReceipt(Request $request)
+    {
+        $transactionDetails = ["sender_id" => 1];
+        return view('app.receipt.receipt', compact('transactionDetails'));
+    }
 }

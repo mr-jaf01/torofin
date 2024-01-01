@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\app\appController;
 use App\Http\Controllers\app\transfer\transferController;
+use App\Http\Controllers\subscription\subscriptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,9 @@ Route::middleware('auth')->group(function () {
             Route::get('/me', 'Me')->name('app.me');
             Route::get('/profile', 'Profile')->name('app.profile');
 
+            Route::get('/transaction/status', 'transactionStatus')->name('app.transaction.status');
+            Route::get('/transaction/receipt', 'transactionReceipt')->name('app.transaction.receipt');
+
         });
 
 
@@ -46,6 +50,11 @@ Route::middleware('auth')->group(function () {
 
 
             
+        });
+
+        Route::controller(subscriptionController::class)->group(function(){
+            Route::post('/app/transaction/airtime', 'airtimePurchase')->name('app.transaction.airtime');
+            Route::post('/app/transaction/data', 'dataPurchase')->name('app.transaction.data');
         });
 
     });

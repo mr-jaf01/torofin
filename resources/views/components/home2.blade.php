@@ -35,50 +35,41 @@
                 <span class="text-sm tracking-wide">Transaction History ></span>
             </div>
 
-            <div id="wallet-balance" class="flex flex-row justify-between items-center">
-               <div>
+            <div id="wallet-balance">
+               
+                <div>
                     <span class="text-3xl font-bold tracking-tighter">
                         <small>₦</small> {{number_format($wallet->available_bal, 2)}}
                     </span>
                     <br>
                     <small class="text-xs">& Rewards <b>₦ {{number_format($wallet->reward_bal, 2)}} </b></small>
                </div>
-                
-                <a href="#addMoneyModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-major-circle-plus class="w-6 h-6 text-white" />
-                    </span>
-                    <span class="text-xs font-bold"></span>
-                </a>
-            </div>
 
-        </section>
+                <div class="flex flex-row justify-between items-center">
+                    <a href="#addMoneyModal" class="flex flex-col justify-center items-center">
+                        <span class="rounded-lg bg-iconbg-50 p-1">
+                            <x-polaris-major-circle-plus class="w-6 h-6 text-white" />
+                        </span>
+                        <span class="text-xs font-bold">Add Money</span>
+                    </a>
+                    
+                    <a href="{{route('app.transfer.page')}}" class="flex flex-col justify-center items-center">
+                        <span class="rounded-lg bg-iconbg-50 p-1">
+                            <x-polaris-major-extend class="w-6 h-6 text-white" />
+                        </span>
+                        <span class="text-xs font-bold">Transfer</span>
+                    </a>
 
-        <section id="" class="p-5 bg-white card-border-radius shadow-sm">
-            <div class="flex flex-row justify-between items-center">
-                
-                <a href="{{route('app.transfer.local.page')}}" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
-                        <img src="{{asset('/assets/images/logo/logo1.png')}}" class="w-6 h-6" alt="" srcset="">
-                    </span>
-                    <span class="text-xs font-bold">To Torofin</span>
-                </a>
-
-                <a href="{{route('app.transfer.other.banks.page')}}" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-major-bank class="w-6 h-6 text-primarycolor-100" />
-                    </span>
-                    <span class="text-xs font-bold">To Other Bank</span>
-                </a>
-
-                <a href="#withdrawModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-minor-import class="w-6 h-6 text-primarycolor-100" />
-                    </span>
-                    <span class="text-xs font-bold">Withdraw</span>
-                </a>
+                    <a href="#withdrawModal" class="flex flex-col justify-center items-center">
+                        <span class="rounded-lg bg-iconbg-50 p-1">
+                            <x-polaris-minor-import class="w-6 h-6 text-white" />
+                        </span>
+                        <span class="text-xs font-bold">Withdraw</span>
+                    </a>
+                </div>
 
             </div>
+
         </section>
 
         <section id="payment-section" class="bg-white flex flex-col gap-4 shadow-sm card-border-radius p-5">

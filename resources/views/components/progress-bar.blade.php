@@ -1,0 +1,1 @@
+<div id="progress-bar" class="progress-bar"></div>

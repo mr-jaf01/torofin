@@ -36,20 +36,23 @@
 
         <main>
             <section class="flex flex-col justify-center items-center">
+
+                <x-application-logo />
                 
-                <div class="flex flex-col justify-center items-center">
+                
+                <div class="flex flex-col justify-center items-center w-full px-5">
                     
-                    <h2 class="text-2xl font-bold my-8 text-center flex flex-col justify-center gap-8 items-center text-primarycolor-100">
+                    <h2 class="text-2xl font-bold my-4 text-center flex flex-col justify-center  items-center text-primarycolor-100">
                         <span class="rounded-lg bg-iconbg-50 p-2">
-                            <x-polaris-major-status-active class="h-16 w-16 text-green-500" />
+                            <x-polaris-major-status-active class="h-8 w-8 text-primarycolor-100" />
                         </span>
                     </h2>
 
-                    <div class="my-12 text-primarycolor-100 text-2xl"> {{ $status }}</div>
+                    <div class="my-2 text-primarycolor-100 text-lg text-center"> {{ $status }}</div>
 
-                    <div class="flex flex-col gap-6 w-full">
-                        <a href="{{route('app.home')}}" class="border border-primarycolor-100  rounded-full text-primarycolor-100 px-8 py-3 flex flex-row justify-center items-center">Done</a>
-                        <button class="bg-primarycolor-100 text-white px-8 py-3 rounded-full flex flex-row justify-center items-center">Share Receipt</button>
+                    <div class="flex flex-col gap-4 w-full mt-4">
+                        <a href="{{route('app.home')}}" class="border border-primarycolor-100  rounded-full text-primarycolor-100 px-4 py-1 flex flex-row justify-center items-center w-full">Done</a>
+                        <button class="bg-primarycolor-100 text-white px-4 py-1 rounded-full flex flex-row justify-center items-center w-full">Share Receipt</button>
                     </div>
                     
                 </div>

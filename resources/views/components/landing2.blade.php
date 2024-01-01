@@ -4,12 +4,12 @@
     <!-- Navigation Bar -->
     <nav class="bg-white px-4 sm:fixed sm:top-0 sm:right-0 w-full rounded rouded-bl-full mb-12 md:mb-0">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row md:justify-between items-center">
+            <div class="flex flex-col md:flex-row  items-center">
 
                 <a href="/" class="text-2xl tracking-wide cursor-pointer font-bold text-primarycolor-100 flex justify-start items-center flex-row gap-1">
                     <x-application-logo />
                     {{-- <img src="{{asset('/assets/images/logo/logo.png')}}" class="h-20 w-20" alt="" srcset=""> --}}
-                    TOROFIN
+                    Wachcom
                 </a>
                 <div class="md:flex hidden">
                     @if (Route::has('login'))
@@ -32,20 +32,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-primarycolor-100 text-white flex flex-col gap-12 md:gap-0  md:flex-row text-center md:mt-24" style="border-bottom-left-radius: 130px; border-top-right-radius:130px;">
+    <header class="bg-primarycolor-100 text-white flex flex-col gap-12 md:gap-0  md:flex-row text-center md:mt-24 p-20" >
         
         <div class="flex flex-col justify-center items-center w-full px-8 py-8 md:py-0">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Welcome to TOROFIN - Unique Banking Experience</h1>
-            <p class="text-lg md:text-2xl">
-                TOROFIN offers a seamless and user-friendly banking experience 
-                that is tailored to the unique needs of customers.  
-            </p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Welcome to Wachcom - Easy Payment</h1>
+            <p class="text-lg md:text-2xl">We offer instant recharge of Airtime, Data Bundle, Cable TV (DStv, GOtv & Startimes), Electricity Bill Payment, and more.</p>
             {{-- <div class="mt-8">
                 <a href="/register" class="bg-white text-primarycolor-100 font-bold py-4 px-6 rounded-full">Get Started</a>
             </div> --}}
         </div>
 
-       <div class="w-full">
+       <div class="w-full hidden">
 
             <div class="mockup-phone border-primarycolor-100">
                 <div class="camera"></div> 
@@ -53,8 +50,8 @@
                     <div class="artboard artboard-demo phone-1 bg-white">
                         <x-application-logo />
                         {{-- <img src="{{asset('/assets/images/logo/logo.png')}}" class="h-20 w-20" alt="" srcset=""> --}}
-                        <h2 class="text-3xl font-bold text-primarycolor-100 my-2 tracking-wide">TOROFIN</h2>
-                        <h2 class="text-4xl font-serif">Unique Banking Experience</h2>
+                        <h2 class="text-3xl font-bold text-primarycolor-100 my-2 tracking-wide">Wachcom</h2>
+                        <h2 class="text-4xl font-serif">Easy Payment</h2>
 
                         <div class="my-12">
                             <a href="/register" class="bg-white text-primarycolor-100 font-bold py-4 px-6 rounded-full border">Get Started</a>
@@ -86,8 +83,7 @@
                 </span>
                 Our Services
             </h2>
-            <x-services-section />
-            {{-- <p class="text-2xl text-center">TOROFIN offers instant recharge of Airtime, Data Bundles, Cable TV (DStv, GOtv & Startimes), Electricity Bill Payment, and more.</p> --}}
+            <p class="text-2xl text-center">Wachcom offers instant recharge of Airtime, Data Bundles, Cable TV (DStv, GOtv & Startimes), Electricity Bill Payment, and more.</p>
         </div>
     </section>
 
@@ -96,13 +92,9 @@
 
         <div class="w-full">
             <h2 class="text-6xl font-bold mb-8 text-center">
-                TOROFIN Security System
+                Wachcom Security System
             </h2>
-            <p class="text-lg text-center">
-                ToroFin is built with the latest security features, 
-                including encryption and multi-factor authentication, 
-                to ensure that users’ data and transactions are safe and secure.
-            </p>
+            <p class="text-lg text-center">Wachcom provides the greatest layer of security for your VTU business, protecting against hackers and fraud with super self-hosted spyware monitoring activities on websites.</p>
         </div>
 
         <div class="w-full flex flex-row justify-center items-center">
@@ -121,20 +113,20 @@
                 <span class="rounded-lg bg-iconbg-50 p-2">
                     <x-polaris-major-code class="h-16 w-16 text-primarycolor-100" />
                 </span>
-                TOROFIN APIs
+                Wachcom APIs
             </h2>
-            <p class="text-2xl text-center">Thousands of businesses use TOROFIN's APIs to send mobile top-ups and other bill payments worldwide. Our cloud platform offers a simple solution to complex coding for Airtime, Data Bundles, and Utility Payments.</p>
+            <p class="text-2xl text-center">Thousands of businesses use Wachcom's APIs to send mobile top-ups and other bill payments worldwide. Our cloud platform offers a simple solution to complex coding for Airtime, Data Bundles, and Utility Payments.</p>
         </div>
     </section>
 
     <!-- Easy Payment Section -->
-    <section class="bg-primarycolor-100 py-28 text-white" style="border-bottom-right-radius: 130px; border-top-left-radius:130px;">
+    <section class="bg-primarycolor-100 py-28 text-white">
         <div class="container mx-auto px-12">
             <h2 class="text-6xl font-bold my-8 text-center flex flex-col justify-center gap-8 items-center text-white">
                 <span class="rounded-lg bg-iconbg-50 p-2">
                     <x-polaris-major-payments class="h-16 w-16 text-white" />
                 </span>
-                TOROFIN - Unique Banking Experience
+                Wachcom Easy Payment
             </h2>
             <p class="text-2xl text-center">Top up phone airtime or internet data, pay electricity bills, renew TV subscriptions, buy quality insurance covers, pay education bills, transfer funds, and more with ease.</p>
         </div>
@@ -147,27 +139,13 @@
                 <span class="rounded-lg bg-iconbg-50 p-2">
                     <x-polaris-major-code class="h-16 w-16 text-primarycolor-100" />
                 </span>
-                Join Our Profit Chain Network
+                Become an Agent
             </h2>
-            <p class="text-2xl text-center">Join our network of outstanding entrepreneurs partnering with TOROFIN. Bring the TOROFIN 'easy-payments' experience closer to your network and earn a commission for every transaction you perform for your customers.</p>
+            <p class="text-2xl text-center">Join our network of outstanding entrepreneurs partnering with Wachcom. Bring the Wachcom 'easy-payments' experience closer to your network and earn a commission for every transaction you perform for your customers.</p>
         </div>
     </section>
 
-    <!--   FAQ Section -->
-    <section class="pb-28">
-        <div class="container mx-auto px-12">
-            <h2 class="text-6xl font-bold my-8 text-center flex flex-col justify-center gap-8 items-center text-primarycolor-100">
-                <span class="rounded-lg bg-iconbg-50 p-2">
-                    <x-polaris-major-question-mark class="h-16 w-16 text-primarycolor-100" />
-                </span>
-                Frequently asked questions
-            </h2>
-            <x-faq-section />
-            {{-- <p class="text-2xl text-center">TOROFIN offers instant recharge of Airtime, Data Bundles, Cable TV (DStv, GOtv & Startimes), Electricity Bill Payment, and more.</p> --}}
-        </div>
-    </section>
-
-
+    
     <footer class="footer p-10 bg-primarycolor-100 text-white">
         <nav>
           <header class="footer-title">Services</header> 
@@ -201,7 +179,7 @@
         <aside class="items-center grid-flow-col">
             <x-application-logo />
           {{-- <img src="{{asset('/assets/images/logo/logo.png')}}" class="h-20 w-20" alt="" srcset=""> --}}
-          <p>TOROFIN. <br/>&copy; 2023 TOROFIN. All rights reserved.</p>
+          <p>Wachcom. <br/>&copy; 2023 Wachcom. All rights reserved.</p>
         </aside> 
         <nav class="md:place-self-center md:justify-self-end">
           <div class="grid grid-flow-col gap-4">

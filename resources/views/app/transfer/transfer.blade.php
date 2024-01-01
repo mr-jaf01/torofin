@@ -19,10 +19,10 @@
                     
                     <div class="flex flex-row justify-start items-center gap-2">
                         <span class="rounded-lg bg-iconbg-50 p-1">
-                            <img src="{{asset('/assets/images/logo/logo.png')}}" class="w-6 h-6" alt="" srcset="">
+                            <img src="{{asset('/assets/images/logo/logo1.png')}}" class="w-6 h-6" alt="" srcset="">
                         </span>
                         
-                        <span class="text-xs text-primarycolor-100">To Wachcom Account</span>
+                        <span class="text-sm text-primarycolor-100">To Wachacom Account</span>
                     </div>
                     
                     <span class="rounded-lg bg-iconbg-50 p-1">
@@ -38,7 +38,7 @@
                             <x-polaris-major-bank class="w-6 h-6 text-primarycolor-100" />
                         </span>
                         
-                        <span class="text-xs text-primarycolor-100">To Wachcom Account</span>
+                        <span class="text-sm text-primarycolor-100">To Other Bank Account</span>
                     </div>
                     
                     <span class="rounded-lg bg-iconbg-50 p-1">

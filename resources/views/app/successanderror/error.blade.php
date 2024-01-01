@@ -25,7 +25,7 @@
         <x-app-header>
 
             <div class="flex flex-row justify-between items-center">
-                <a href="{{route('app.transfer.local.page')}}" class="rounded-lg bg-iconbg-50 p-1">
+                <a href="{{route('app.home')}}" class="rounded-lg bg-iconbg-50 p-1">
                     <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
                 </a>
                 <span class="text-sm">Failed</span>
@@ -35,20 +35,22 @@
 
 
         <main>
-            <section class="flex flex-col justify-center items-center">
+            <section class="flex flex-col justify-center items-center w-full">
                 
-                <div class="flex flex-col justify-center items-center">
+                <x-application-logo />
+
+                <div class="flex flex-col justify-center items-center w-full px-5">
                     
-                    <h2 class="text-2xl font-bold my-8 text-center flex flex-col justify-center gap-8 items-center text-primarycolor-100">
+                    <h2 class="text-2xl font-bold my-4 text-center flex flex-col justify-center gap-8 items-center text-primarycolor-100">
                         <span class="rounded-lg bg-iconbg-50 p-2">
-                            <x-polaris-major-cancel class="h-16 w-16 text-red-500" />
+                            <x-polaris-major-cancel class="h-8 w-8 text-red-500" />
                         </span>
                     </h2>
 
-                    <div class="my-12 text-primarycolor-100 text-2xl"> {{ $status }}</div>
+                    <div class="my-2 text-primarycolor-100 text-lg text-center"> {{ $status }}</div>
 
-                    <div class="flex flex-col gap-6 w-full">
-                        <a href="{{route('app.transfer.local.page')}}" class="border border-primarycolor-100 gap-2  rounded-full text-primarycolor-100 px-8 py-3 flex flex-row justify-center items-center">
+                    <div class="flex flex-col gap-4 w-full mt-12">
+                        <a href="{{route('app.transfer.local.page')}}" class="border border-primarycolor-100 gap-2 w-full rounded-full text-primarycolor-100 px-4 py-1 flex flex-row justify-center items-center">
                             <span class="rounded-lg bg-iconbg-50 p-1">
                                 <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
                             </span>
