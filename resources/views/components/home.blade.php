@@ -11,7 +11,7 @@
         </a>
     
         {{-- notifcation and support --}}
-        <div class="w-full flex flex-row justify-end items-center gap-2">
+        <div class="flex flex-row justify-end items-center gap-2">
 
             <span class="rounded-lg bg-iconbg-50 p-1">
                 <x-polaris-major-notification class="w-6 h-6 text-primarycolor-100" />

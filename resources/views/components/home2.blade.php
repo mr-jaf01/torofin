@@ -16,12 +16,7 @@
             <span class="rounded-lg bg-iconbg-50 p-1">
                 <x-polaris-major-notification class="w-6 h-6 text-primarycolor-100" />
             </span>
-
-            <span class="rounded-lg bg-iconbg-50 p-1">
-                <x-polaris-major-question-mark class="w-6 h-6 text-primarycolor-100" />
-            </span>
-           
-            
+ 
         </div>
     </header>
     

@@ -9,11 +9,14 @@
                     <span class="text-sm text-primarycolor-100">Electricity</span>
                 </div>
             </x-modal-header>
+            
+            <section id="coming-soon" class="my-24">
+                <span class="flex flex-row justify-center items-center text-primarycolor-100 text-2xl">Coming Soon</span>
+            </section>
     
-    
-            <div class="modal-action">
+            {{-- <div class="modal-action">
                 <button  class=" bg-primarycolor-100 text-white px-8 py-2 rounded-full">Pay</button>
-            </div>
+            </div> --}}
         </div>
     </div>
 </form>

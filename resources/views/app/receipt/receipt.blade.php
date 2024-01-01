@@ -99,7 +99,7 @@
                 <span class="text-xs text-primarycolor-400 font-bold">support@torofin.ng</span>
             </section>
 
-            <hr class="my-1 border-2 border-primarycolor-400 border-dotted">
+            <hr class="my-1 border-2  border-dotted">
 
             <section id="save-reciept-btn" class="flex flex-row justify-center items-center mt-12">
                 

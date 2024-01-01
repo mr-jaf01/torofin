@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\app\transfer\transferServices;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class transferController extends Controller
 {
@@ -14,8 +15,8 @@ class transferController extends Controller
         return view('app.transfer.transfer');
     }
 
-    public function localtransferPage()
-    {
+    public function localtransferPage(Request $request)
+    {   
         return view('app.transfer.localtransferPage');
     }
 
@@ -50,11 +51,6 @@ class transferController extends Controller
         
     }
 
-    // public function transferFailed(Request $request)
-    // {
-    //     $status = $request->status;
-    //     return view('app.transfer.error', compact('status'));
-    // }
 
 
     public function otherBankstransferPage()
