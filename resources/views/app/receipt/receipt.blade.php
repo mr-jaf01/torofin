@@ -26,13 +26,13 @@
 
            <div class="flex flex-row">
                 <a href="{{route('app.home')}}" class="rounded-lg bg-iconbg-50 p-1">
-                    <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
+                    <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                 </a>
            </div>
 
             <div class="flex flex-row justify-between items-center">
                 {{-- <a href="{{route('app.home')}}" class="rounded-lg bg-iconbg-50 p-1">
-                    <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
+                    <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                 </a> --}}
                 <x-application-logo />
                 <span class="text-sm font-bold">Transaction Receipt</span>

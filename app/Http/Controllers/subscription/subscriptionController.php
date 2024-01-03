@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\app\subscription\subscriptionServices;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class subscriptionController extends Controller
 {
@@ -20,12 +21,12 @@ class subscriptionController extends Controller
             ]);
 
             try {
-                
+        
                 $status = $subscriptionServices
                 ->airtimePurchase($request->sender_id, $request->network, $request->mobileno, $request->amount);
                 
                 $status = urlencode($status);
-                return redirect('/app/transaction/status/?status='.$status);
+                return redirect('/app/transaction/status/?status='.$status);                
 
             } catch (\Throwable $th) {
 

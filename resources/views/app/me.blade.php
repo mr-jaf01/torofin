@@ -1,5 +1,5 @@
 <x-app-layout>
 
-    <x-me />
+    <x-me :wallet="$wallet" />
 
 </x-app-layout>

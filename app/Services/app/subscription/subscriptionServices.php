@@ -3,6 +3,8 @@
 namespace App\Services\app\subscription;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class subscriptionServices {
 
@@ -10,6 +12,9 @@ class subscriptionServices {
     {
         $check_sender = User::where('id', $sender_id)->first();
         $senderWallet = getwalletByUserId($check_sender->id);
+
+        $now = now()->setTimezone("Africa/Lagos");
+        $formattedtime = $now->format('YmdHi').Str::random(5).'torofin';
         
         if ($check_sender) {
 
@@ -18,16 +23,37 @@ class subscriptionServices {
 
                 if ($amount >= 50) {
 
-                    // API REQUEST TO RECHARGE AIRTIME OR OTHER BUSINESS LOGIC
+                    $response = Http::withHeaders([
 
-                    
-                    
-                    $message = [
-                        "status" => 'success',
-                        'message' => 'Recharged Successfully'
-                    ];
+                        "api-key" => env('API_KEY'),
+                        'secret-key' => env('SECRET_KEY')
+    
+                    ])->post(env('BASE_URL').'/api/pay', [
+    
+                        "request_id" => $formattedtime,
+                        "serviceID" => $network_type,
+                        "amount" => $amount,
+                        "phone" => $phone
+                    ]);
+    
+                    if ($response['response_description'] === "TRANSACTION SUCCESSFUL") 
+                    {
+                        $message = [
+                            "status" => 'success',
+                            'message' => 'Transaction Successful'
+                        ];
 
-                    return json_encode($message);
+                        return json_encode($message);
+                    }
+                    else
+                    {
+                        $message = [
+                            "status" => 'failed',
+                            'message' => 'Transaction Failed'
+                        ];
+                        return json_encode($message);
+                        
+                    }
 
                 }
                 else
@@ -84,7 +110,7 @@ class subscriptionServices {
                     
                     $message = [
                         "status" => 'success',
-                        'message' => 'Data Subscription Successfully'
+                        'message' => 'Transaction Successful'
                     ];
 
                     return json_encode($message);

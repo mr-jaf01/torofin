@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\app\appController;
+use App\Http\Controllers\app\settings\settingsController;
 use App\Http\Controllers\app\transfer\transferController;
 use App\Http\Controllers\subscription\subscriptionController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('app')->group(function(){
 
+
+
         Route::controller(appController::class)->group(function(){
 
             Route::get('/home', 'Home')->name('app.home');
@@ -32,6 +35,7 @@ Route::middleware('auth')->group(function () {
 
         });
 
+        
 
         Route::controller(transferController::class)->group(function(){
 
@@ -52,10 +56,20 @@ Route::middleware('auth')->group(function () {
             
         });
 
+
+
+
         Route::controller(subscriptionController::class)->group(function(){
             Route::post('/app/transaction/airtime', 'airtimePurchase')->name('app.transaction.airtime');
             Route::post('/app/transaction/data', 'dataPurchase')->name('app.transaction.data');
         });
+
+
+
+        Route::controller(settingsController::class)->group(function(){
+            Route::get('/settings/home', 'settingsPage')->name('app.settings.page');
+        });
+
 
     });
 

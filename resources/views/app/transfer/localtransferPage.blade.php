@@ -5,7 +5,7 @@
 
             <div class="flex flex-row justify-between items-center">
                 <a href="{{route('app.home')}}" class="rounded-lg bg-iconbg-50 p-1">
-                    <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
+                    <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                 </a>
                 <span class="text-sm">Local Transfer</span>
             </div>
@@ -33,7 +33,7 @@
                 <button  id="checkrecipientBtn" class="rounded-full gap-4 flex flex-row justify-center items-center px-6 py-3 bg-primarycolor-100 text-white">
                     Next
                     <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-minor-arrow-right class="w-3 h-3 text-white" />
+                        <x-polaris-minor-chevron-right class="w-3 h-3 text-white" />
                     </span>
                 </button>
                 

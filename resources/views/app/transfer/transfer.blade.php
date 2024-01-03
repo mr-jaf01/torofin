@@ -5,7 +5,7 @@
 
            <div class="flex flex-row justify-between items-center">
                 <a href="{{route('app.home')}}" class="rounded-lg bg-iconbg-50 p-1">
-                    <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
+                    <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                 </a>
                 <span class="text-sm">Transfer</span>
            </div>
@@ -26,7 +26,7 @@
                     </div>
                     
                     <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-minor-arrow-right class="w-6 h-6 text-primarycolor-100" />
+                        <x-polaris-minor-chevron-right class="w-6 h-6 text-primarycolor-100" />
                     </span>
 
                 </a>
@@ -42,7 +42,7 @@
                     </div>
                     
                     <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-minor-arrow-right class="w-6 h-6 text-primarycolor-100" />
+                        <x-polaris-minor-chevron-right class="w-6 h-6 text-primarycolor-100" />
                     </span>
 
                 </a>

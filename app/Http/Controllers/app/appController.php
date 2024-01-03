@@ -26,9 +26,10 @@ class appController extends Controller
         return view('app.cards');
     }
 
-    public function Me() : View
+    public function Me(userServices $userServices) : View
     {
-        return view('app.me');
+        $wallet = $userServices->getUserWallet(Auth::user()->id);
+        return view('app.me', compact('wallet'));
     }
 
     public function Profile(userServices $userServices) : View

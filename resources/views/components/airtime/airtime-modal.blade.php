@@ -7,7 +7,7 @@
             <x-modal-header>
                 <div class="flex flex-row justify-between items-center mb-8">
                     <a href="#" class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-minor-arrow-left class="w-6 h-6 text-primarycolor-100" />
+                        <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                     </a>
                     <span class="text-sm text-primarycolor-100">Airtime</span>
                 </div>
@@ -49,7 +49,7 @@
 
                     <label for="9mobile" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="9mobile" name="network" id="9mobile">
+                            <input type="radio" value="etisalat" name="network" id="9mobile">
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{asset('/assets/images/logo/9mobile.jpeg')}}" alt="9mobile-logo" class="w-8 h-8 rounded-full">
