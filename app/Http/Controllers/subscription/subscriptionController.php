@@ -5,6 +5,7 @@ namespace App\Http\Controllers\subscription;
 use App\Http\Controllers\Controller;
 use App\Services\app\subscription\subscriptionServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Str;
 
@@ -12,6 +13,9 @@ class subscriptionController extends Controller
 {
     public function airtimePurchase(Request $request, subscriptionServices $subscriptionServices)
     {
+        $now = now()->setTimezone("Africa/Lagos");
+        $formattedtime = $now->format('YmdHi').Str::random(5).'torofin';
+
         try {
 
             $request->validate([
@@ -20,8 +24,8 @@ class subscriptionController extends Controller
                 'network' => ['required'],
             ]);
 
-            try {
-        
+            try { 
+               
                 $status = $subscriptionServices
                 ->airtimePurchase($request->sender_id, $request->network, $request->mobileno, $request->amount);
                 

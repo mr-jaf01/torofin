@@ -31,10 +31,10 @@ class subscriptionServices {
                      
                     $response = Http::withHeaders([
 
-                        "api-key" => env('API_KEY'),
-                        'secret-key' => env('SECRET_KEY')
+                        "api-key" => env('LIVE_API_KEY'),
+                        'secret-key' => env('LIVE_SECRET_KEY')
     
-                    ])->post(env('BASE_URL').'/api/pay', [
+                    ])->post(env('LIVE_BASE_URL').'/api/pay', [
     
                         "request_id" => $formattedtime,
                         "serviceID" => $network_type,
