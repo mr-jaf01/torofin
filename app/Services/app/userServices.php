@@ -28,4 +28,34 @@ class userServices {
     {
         return walletModel::where('user_id', $user_id)->first();
     }
+
+    public function creditWallet($wallet_id, $amount)
+    {
+        $checkifexit = walletModel::where('id', $wallet_id)->first();
+        
+        if ($checkifexit) {
+
+            $current_balance = $checkifexit->available_bal;
+            $walllet = walletModel::where('id', $wallet_id)->update([
+                    "available_bal" => $current_balance + $amount,
+                ]);
+
+            return $walllet;
+        }
+    }
+
+    public function debitWallet($wallet_id, $amount)
+    {
+        $checkifexit = walletModel::where('id', $wallet_id)->first();
+        
+        if ($checkifexit) {
+
+            $current_balance = $checkifexit->available_bal;
+            $walllet = walletModel::where('id', $wallet_id)->update([
+                    "available_bal" => $current_balance - $amount,
+                ]);
+
+            return $walllet;
+        }
+    }
 }

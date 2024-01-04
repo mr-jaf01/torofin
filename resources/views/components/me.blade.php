@@ -1,8 +1,8 @@
 <div class="">
 
-    <header class=" bg-primarycolor-100 shadow-sm  text-white px-3">
+    <header class=" bg-primarycolor-100 shadow-sm  text-white px-3 py-3">
        
-        <section class="flex flex-row items-center justify-between px-2 py-1">
+        <section class="flex flex-row items-center justify-between px-2 py-2">
 
              {{-- profile picture --}}
             <a href="{{route('app.profile')}}" class="flex flex-row justify-start items-center gap-2 w-full">
@@ -13,7 +13,7 @@
             </a>
         
             {{-- notifcation and support --}}
-            <a href="{{ route('app.settings.page') }}">
+            <a href="{{ route('app.settings.page') }}" class="">
                 <span class="rounded-lg bg-iconbg-50 p-1 flex flex-row justify-center items-center">
                     <x-polaris-minor-settings-filled class="w-6 h-6 text-white" />
                 </span>
@@ -131,7 +131,6 @@
             </div>
 
         </section>
-        
     </main>
 
 </div>

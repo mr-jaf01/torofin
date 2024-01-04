@@ -3,13 +3,17 @@
 namespace App\Services\app\subscription;
 
 use App\Models\User;
+use App\Services\app\userServices;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class subscriptionServices {
 
     public function airtimePurchase($sender_id, $network_type, $phone, $amount)
-    {
+    {   
+
+        $userServices = new userServices();
+
         $check_sender = User::where('id', $sender_id)->first();
         $senderWallet = getwalletByUserId($check_sender->id);
 
@@ -23,6 +27,8 @@ class subscriptionServices {
 
                 if ($amount >= 50) {
 
+                    $userServices->debitWallet($senderWallet->id, $amount);
+                     
                     $response = Http::withHeaders([
 
                         "api-key" => env('API_KEY'),
@@ -51,6 +57,8 @@ class subscriptionServices {
                             "status" => 'failed',
                             'message' => 'Transaction Failed'
                         ];
+
+                        $userServices->creditWallet($senderWallet->id, $amount);
                         return json_encode($message);
                         
                     }
