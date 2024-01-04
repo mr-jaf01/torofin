@@ -17,9 +17,20 @@
          }
      </style>
      <!-- Scripts -->
+
+     
+      <!-- Custom Styles   -->
+      <link rel="stylesheet" href="{{asset('/assets/css/index.css')}}">
+
+
+
      @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
+
+    <x-progress-bar />
+
+    
     <div class="py-4 pb-20">
 
         <x-app-header>
@@ -62,5 +73,8 @@
         </main>
 
     </div>
+
+        <script src="{{asset('/assets/js/jquery.js')}}"></script>
+        <script src="{{asset('/assets/js/progressbar.js')}}"></script>
 </body>
 </html>
