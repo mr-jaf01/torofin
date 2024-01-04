@@ -47,8 +47,9 @@
                                                     ₦
                                                 </span>
                                             </span>
-                                            <x-text-input type="number" inputmode="numeric" name="amount" id="amount" required class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="50 - 5,000,000" />
+                                            <x-text-input type="number" required inputmode="numeric" name="amount" id="amount"  class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="50 - 5,000,000" />
                                     </div>
+                                    <x-input-error :messages="$errors->get('amount')" class="text-xs" />
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
@@ -71,8 +72,8 @@
                         </div>
 
 
-                        <input type="hidden" name="receiver" value="{{getwalletByAccount(request('recipient'))->user_id}}">
-                        <input type="hidden" name="sender" value="{{Auth::user()->id}}">
+                        <input type="hidden" required name="receiver" value="{{getwalletByAccount(request('recipient'))->user_id}}">
+                        <input type="hidden" required name="sender" value="{{Auth::user()->id}}">
 
                     @else
                         <div class="flex flex-row justify-center items-center">

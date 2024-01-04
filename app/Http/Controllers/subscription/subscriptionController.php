@@ -22,6 +22,7 @@ class subscriptionController extends Controller
                 'mobileno' => ['required', 'string', 'min:11', 'max:11'],
                 'amount' => ['required'],
                 'network' => ['required'],
+                'pin' => ['required', 'string', 'min:4', 'max:4']
             ]);
 
             try { 
@@ -59,7 +60,8 @@ class subscriptionController extends Controller
                 'mobileno' => ['required', 'string', 'min:11', 'max:11'],
                 'amount' => ['required'],
                 'network' => ['required'],
-                'plan' => ['required']
+                'plan' => ['required'],
+                'pin' => ['required','string', 'min:4', 'max:4']
             ]);
 
             try {

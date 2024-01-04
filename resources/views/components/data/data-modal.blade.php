@@ -1,10 +1,10 @@
 <form action="{{ route('app.transaction.data') }}" method="post">
     @csrf
     <div class="modal modal-bottom" role="dialog" id="dataModal">
-        <div class="modal-box">
+        <div class="modal-box overflow-hidden">
 
             <x-modal-header>
-                <div class="flex flex-row justify-between items-center mb-8">
+                <div class="flex flex-row justify-between items-center mb-4">
                     <a href="#" class="rounded-lg bg-iconbg-50 p-1">
                         <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                     </a>
@@ -12,63 +12,60 @@
                 </div>
             </x-modal-header>
             
-            <div id="details" class="w-full my-4 flex flex-col gap-8">
+            <div id="details" class="w-full my-2 flex flex-col gap-4">
 
                 <div class="flex flex-row gap-8 items-center"> 
 
-                    <label for="data-mtn" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
+                    <label for="mtndata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="mtn" name="network" id="data-mtn">
+                            <input type="radio" value="mtn" name="network" id="mtndata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <img src="{{asset('/assets/images/logo/mtn.png')}}" alt="mtn-logo" class="w-8 h-8 rounded-full">
+                            <img src="{{asset('/assets/images/logo/mtn.png')}}" alt="mtn-logo" class="w-6 h-6 rounded-full">
                         </div>
                     </label>
                         
-                    
-
-                    <label for="data-airtel" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
+                    <label for="airteldata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="airtel" name="network" id="data-airtel">
+                            <input type="radio" value="airtel" name="network" id="airteldata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <img src="{{asset('/assets/images/logo/airtel.jpeg')}}" alt="airtel-logo" class="w-8 h-8 rounded-full">
+                            <img src="{{asset('/assets/images/logo/airtel.jpeg')}}" alt="airtel-logo" class="w-6 h-6 rounded-full">
                         </div>
                     </label>
                        
-
-                    <label for="data-glo" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
+                    <label for="glodata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="glo" name="network" id="data-glo">
+                            <input type="radio" value="glo" name="network" id="glodata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <img src="{{asset('/assets/images/logo/glo.jpeg')}}" alt="glo-logo" class="w-8 h-8 rounded-full">
+                            <img src="{{asset('/assets/images/logo/glo.jpeg')}}" alt="glo-logo" class="w-6 h-6 rounded-full">
                         </div>
                     </label>
 
-                    <label for="data-9mobile" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
+                    <label for="9mobiledata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="9mobile" name="network" id="data-9mobile">
+                            <input type="radio" value="etisalat" name="network" id="9mobiledata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <img src="{{asset('/assets/images/logo/9mobile.jpeg')}}" alt="9mobile-logo" class="w-8 h-8 rounded-full">
+                            <img src="{{asset('/assets/images/logo/9mobile.jpeg')}}" alt="9mobile-logo" class="w-6 h-6 rounded-full">
                         </div>
                     </label>
                     
                 </div>
-                <x-input-error :messages="$errors->get('network')" class="" />
+                <x-input-error :messages="$errors->get('network')" class="text-xs" />
                 
 
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="mobileno" class="text-xs">Phone Number</label>
+                    <label for="mobilenodata" class="text-xs">Phone Number</label>
                     <div class="flex">
                             <span class="inline-flex items-center px-3 text-sm  bg-iconbg-50 rounded-e-0 rounded-s-lg">
                                 <x-polaris-major-phone class="w-6 h-6 text-primarycolor-100 flex flex-row justify-center items-center font-bold" />
                             </span>
-                            <input type="number"  inputmode="numeric" name="mobileno" id="mobileno" required maxlength="11" minlength="11" class="rounded-lg focus:ring-1 focus:ring-primarycolor-100 border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="08132911690" />
+                            <input type="number" required  inputmode="numeric" name="mobileno" id="mobilenodata" maxlength="11" minlength="11" class="rounded-lg focus:ring-1 focus:ring-primarycolor-100 border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="08132911690" />
                     </div>
-                    <x-input-error :messages="$errors->get('number')" class="" />
-                </div>
+                    <x-input-error :messages="$errors->get('mobileno')" class="text-xs" />
+                </div>    
 
 
                 <div class="flex flex-col gap-1 w-full">
@@ -79,7 +76,8 @@
                                 ₦
                             </span>
                         </span>
-                        <select name="plan" id="plan" class="rounded-lg border-primarycolor-100 focus:border-0  focus:ring-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5" >
+                        <select name="plan" id="plan" required  class="rounded-lg border-primarycolor-100 focus:border-0  focus:ring-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5" >
+                            <option value=""></option>
                             <option value="1gb">1GB -  ₦ 225</option>
                             <option value="2gb">2GB -  ₦ 450</option>
                             <option value="3gb">3GB -  ₦ 750</option>
@@ -89,6 +87,14 @@
                     <x-input-error :messages="$errors->get('plan')" class="" />
                 </div>
                 
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-1 w-full mt-1">
+                <label for="paymentpindata" class="text-xs">Enter 4 Digit PIN</label>
+                <div class="flex w-1/3">
+                    <input type="password" required name="pin" maxlength="4" minlength="4" inputmode="numeric"  id="paymentpindata" autocomplete="off" class="rounded-lg border-primarycolor-100 focus:border-0 text-center focus:ring-primarycolor-100  w-full p-2.5" placeholder="****" />
+                </div>
+                <x-input-error :messages="$errors->get('pin')" class="text-xs" />
             </div>
 
             <input type="hidden" name="amount" value="100">
