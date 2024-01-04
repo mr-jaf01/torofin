@@ -21,15 +21,14 @@
 
         </section>
 
-       <section class="py-1 px-2">
+       <section class="flex flex-col gap-2 py-1 px-2">
             <div><span class="font-bold text-xs">Total Balance</span></div>
-            <div>
+            <div class="flex flex-col gap-2">
                 <span class="text-3xl font-bold tracking-tighter">
                     <small>₦</small> {{number_format($wallet->available_bal, 2)}}
                 </span>
-                <br>
                 <small class="text-xs">& Rewards <b>₦ {{number_format($wallet->reward_bal, 2)}} </b></small>
-           </div>
+            </div>
        </section>
 
     </header>
