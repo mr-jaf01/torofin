@@ -95,7 +95,7 @@
             <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
 
     
-            <div class="modal-action">
+            <div class="modal-actiondata flex flex-row justify-end">
                 <button  class=" bg-primarycolor-100 text-white px-8 py-2 rounded-full">Pay</button>
             </div>
         </div>

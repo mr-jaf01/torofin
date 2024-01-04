@@ -78,7 +78,7 @@
                                 ₦
                             </span>
                         </span>
-                        <x-text-input type="number" name="amount" inputmode="numeric"  id="amount" class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5" placeholder="50 - 50,000" />
+                        <x-text-input type="number" required name="amount" inputmode="numeric"  id="amount" class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5" placeholder="50 - 50,000" />
                     </div>
                     <x-input-error :messages="$errors->get('amount')" class="" />
                 </div>
