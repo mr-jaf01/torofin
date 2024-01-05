@@ -76,5 +76,16 @@
 
         <script src="{{asset('/assets/js/jquery.js')}}"></script>
         <script src="{{asset('/assets/js/progressbar.js')}}"></script>
+        <script src="{{asset('/assets/js/pulltorefresh.js')}}"></script>
+
+
+        <script>
+            const ptr = PullToRefresh.init({
+                mainElement: 'body',
+                onRefresh() {
+                    window.location.reload();
+                }
+            });
+        </script>
 </body>
 </html>
