@@ -14,6 +14,35 @@
     transition: width 1s ease; /* Adjust the duration (1s) as needed */
 }
 
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    z-index: 1000;
+}
+
+.loader {
+    border: 4px solid #152235;
+    border-top: 4px solid #152235;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* Hide the number spinner (arrows) */
 input[type="number"]::-webkit-inner-spin-button,
