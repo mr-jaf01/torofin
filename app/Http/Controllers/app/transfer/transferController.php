@@ -7,6 +7,8 @@ use App\Services\app\transfer\transferServices;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 
 class transferController extends Controller
@@ -83,10 +85,137 @@ class transferController extends Controller
 
 
 
-    public function otherBankstransferPage()
+    public function otherBankstransferPage(Request $request)
     {
-        return view('app.transfer.otherbankstransferPage');
+
+        $cacheKey = 'banks_data';
+
+        $banks = Cache::remember($cacheKey, now()->addMinutes(60), function () {
+    
+            $response = Http::withHeaders([
+                "Username" => env('USER_EMAIL'),
+                'Password' => env('USER_PASS')
+            ])->get(env('BASE_URL').'/api/service-variations?serviceID=bank-deposit');
+
+
+            if ($response->successful()) {
+                return $response['content']['varations'];
+               
+            }
+
+           return [];
+
+        });
+
+        return view('app.transfer.otherbankstransferPage', compact('banks'));
+        
     }
 
+
+    private function handleVerificationResult($result, $request)
+    {
+        if (isset($result['content']['error'])) {
+            return redirect('/app/transfer/other/banks?message=Please Check your Account Number or Bank and Try Again#sendMoneyModalBank');
+        } else {
+            $recipient = [
+                "serviceID" => "bank-deposit",
+                "bank" => $request->bank,
+                "account_number" => $request->recipient,
+                "account_name" => $result['content']['account_name'],
+            ];
+            $recipient = json_encode($recipient);
+            $recipient = urlencode($recipient);
+            return redirect('/app/transfer/other/banks?recipient='.$recipient.'#sendMoneyModalBank');
+        }
+    }
+
+
+    public function verifyBankAccountFunc(Request $request)
+    {
+        try {
+            $request->validate([
+                'recipient' => ['required', 'min:10', 'max:10'],
+                'bank' => ['required']
+            ]);
+    
+            $cacheKey = 'verify_bank_' . $request->recipient . '_' . $request->bank;
+            
+            // Attempt to retrieve the cached result
+            $cachedResult = Cache::get($cacheKey);
+    
+            if ($cachedResult) {
+                return $this->handleVerificationResult($cachedResult, $request);
+            }
+    
+            try {
+                $response = Http::withHeaders([
+                    "Username" => env('USER_EMAIL'),
+                    'Password' => env('USER_PASS'),
+                    "api-key" => env('API_KEY'),
+                    'secret-key' => env('SECRET_KEY')
+                ])->post(env('BASE_URL').'/api/merchant-verify', [
+                    "serviceID" => "bank-deposit",
+                    "billersCode" => $request->recipient,
+                    "type" => $request->bank,
+                ]);
+    
+                $result = $response->json();
+    
+                // Cache the result for future use
+                Cache::put($cacheKey, $result, now()->addHours(1));
+    
+                return $this->handleVerificationResult($result, $request);
+    
+            } catch (\Throwable $th) {
+                $message = [
+                    "status" => 'failed',
+                    "message" => "Oops! System Down!"
+                ];
+                $status = urlencode(json_encode($message));
+                return redirect('/app/transaction/status/?status=' . $status);
+            }
+    
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator->errors());
+        }
+    }
+
+
+    public function sendMoneytoBankFunc(Request $request, transferServices $transferServices)
+    {
+        try {
+            
+            $request->validate([
+                'sender' => ['required'],
+                'bank' => ['required'],
+                'account_number' => ['required'],
+                'amount' => ['required'],
+            ]);
+
+            try {
+                
+                $status = $transferServices->sendMoneytoBank($request->sender, $request->bank, 
+                $request->account_number, $request->amount);
+
+                //return $status;
+                $status = urlencode($status);
+                return redirect('/app/transaction/status/?status='.$status);
+
+            } catch (\Throwable $th) {
+
+                $message = [
+                    "status" => 'failed',
+                    "message" => "Opss! System Down!"
+                ];
+                $status = urlencode(json_encode($message));
+                return redirect('/app/transaction/status/?status='.$status);
+            }
+
+        } catch (ValidationException $e) {
+
+            return redirect('/app/transfer/other/banks#sendMoneyModalBank')->withErrors($e->validator->errors());
+        
+        }
+    }
 
 }

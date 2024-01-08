@@ -46,13 +46,13 @@ Route::middleware('auth')->group(function () {
             Route::get('/transfer/local/account', 'localtransferPage')->name('app.transfer.local.page');
             Route::post('/transfer/local/account/sendMoney', 'localtransferSendMoneyFunc')->name('app.transfer.local.func');
             Route::get('/transfer/local/account/sendMoney/success', 'transferSuccess')->name('app.transfer.local.success');
-
+            
 
 
             //Other Banks Transfer Route
             Route::get('/transfer/other/banks', 'otherBankstransferPage')->name('app.transfer.other.banks.page');
-
-
+            Route::post('/transfer/other/banks', 'verifyBankAccountFunc')->name('app.transfer.other.banks.verify.account.func');
+            Route::post('/transfer/other/to/bank', 'sendMoneytoBankFunc')->name('app.transfer.other.bank.sendmoneyfunc');
             
         });
 

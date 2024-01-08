@@ -13,11 +13,11 @@
         {{-- notifcation and support --}}
         <div class="flex flex-row justify-end items-center gap-2">
 
-            <span class="rounded-lg bg-iconbg-50 p-1">
+            <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                 <x-polaris-major-notification class="w-6 h-6 text-primarycolor-100" />
             </span>
 
-            <span class="rounded-lg bg-iconbg-50 p-1">
+            <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                 <x-polaris-major-question-mark class="w-6 h-6 text-primarycolor-100" />
             </span>
            
@@ -45,8 +45,8 @@
                </div>
                 
                 <a href="#addMoneyModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
-                        <x-polaris-major-circle-plus class="w-6 h-6 text-white" />
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
+                        <x-polaris-major-circle-plus class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold"></span>
                 </a>
@@ -58,21 +58,21 @@
             <div class="flex flex-row justify-between items-center">
                 
                 <a href="{{route('app.transfer.local.page')}}" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <img src="{{asset('/assets/images/logo/logo1.png')}}" class="w-6 h-6" alt="" srcset="">
                     </span>
                     <span class="text-xs font-bold">To Torofin</span>
                 </a>
 
                 <a href="{{route('app.transfer.other.banks.page')}}" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-bank class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">To Other Bank</span>
                 </a>
 
                 <a href="#withdrawModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-minor-import class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">Withdraw</span>
@@ -86,21 +86,21 @@
             <div class="flex flex-row justify-between items-center">
                 
                 <a href="#airtimeModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-analytics class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">Airtime</span>
                 </a>
 
                 <a href="#dataModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-minor-sort  class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">Data</span>
                 </a>
 
                 <a href="#tvModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-live-view class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">TV</span>
@@ -110,21 +110,21 @@
             <div class="flex flex-row justify-between items-center">
                 
                 <a href="#electricityModal" class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-confetti class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">Electricity</span>
                 </a>
 
                 <div class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-referral class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">Refer & Earn</span>
                 </div>
 
                 <div class="flex flex-col justify-center items-center">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-apps class="w-6 h-6 text-primarycolor-100" />
                     </span>
                     <span class="text-xs font-bold">More</span>

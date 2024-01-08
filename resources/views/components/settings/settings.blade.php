@@ -3,7 +3,7 @@
     <x-app-header>
 
         <div class="flex flex-row justify-between items-center">
-             <a href="{{route('app.me')}}" class="rounded-lg bg-iconbg-50 p-1">
+             <a href="{{route('app.me')}}" class="rounded-lg bg-gray-50 shadow-sm border p-1">
                  <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
              </a>
              <span class="text-sm">Settings</span>
@@ -18,7 +18,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-lock class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Login Settings</span>
@@ -30,7 +30,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-payments class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Payment Settings</span>
@@ -43,7 +43,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-question-mark class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Security Question</span>
@@ -58,7 +58,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-cash-dollar class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Savings Settings</span>
@@ -70,7 +70,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-mobile class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">SMS Alert Subscription</span>
@@ -86,7 +86,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-customer-minus class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Close Account</span>
@@ -98,7 +98,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-circle-information class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">About TOROFIN</span>

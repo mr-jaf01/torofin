@@ -6,7 +6,7 @@
 
                     <x-modal-header>
                         <div class="flex flex-row justify-between items-center mb-8">
-                            <a href="{{route('app.transfer.local.page')}}" class="rounded-lg bg-iconbg-50 p-1">
+                            <a href="{{route('app.transfer.local.page')}}" class="rounded-lg bg-gray-50 shadow-sm border p-1">
                                 <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                             </a>
                             <span class="text-sm text-primarycolor-100">Transfer To TOROFIN Account</span>
@@ -47,7 +47,7 @@
                                                     ₦
                                                 </span>
                                             </span>
-                                            <x-text-input type="number" required inputmode="numeric" name="amount" id="amount"  class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="50 - 5,000,000" />
+                                            <x-text-input type="number" required inputmode="numeric" name="amount" id="amount"  class="rounded-e-lg bg-gray-50 focus:ring-0 focus:ring-primarycolor-100 shadow-sm border-gray-50  focus:border-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="50 - 5,000,000" />
                                     </div>
                                     <x-input-error :messages="$errors->get('amount')" class="text-xs" />
                                 </div>
@@ -58,7 +58,7 @@
                                         <span class="inline-flex items-center px-3 text-sm  bg-iconbg-50 rounded-e-0 rounded-s-lg">
                                             <img src="{{asset('/assets/images/logo/logo1.png')}}" class="w-6 h-6" alt="" srcset="">
                                         </span>
-                                        <x-text-input type="text" name="remark"  id="remark" class="rounded-e-lg border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5" placeholder="what's this for? (Optional)" />
+                                        <x-text-input type="text" name="remark"  id="remark" class="rounded-e-lg bg-gray-50 focus:ring-0 focus:ring-primarycolor-100 shadow-sm border-gray-50  focus:border-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5" placeholder="what's this for? (Optional)" />
                                     </div>
                                 </div>
                                 

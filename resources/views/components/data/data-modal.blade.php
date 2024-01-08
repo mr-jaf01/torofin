@@ -5,7 +5,7 @@
 
             <x-modal-header>
                 <div class="flex flex-row justify-between items-center mb-4">
-                    <a href="#" class="rounded-lg bg-iconbg-50 p-1">
+                    <a href="#" class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-mobile-chevron class="w-6 h-6 text-primarycolor-100" />
                     </a>
                     <span class="text-sm text-primarycolor-100">Data</span>
@@ -62,7 +62,7 @@
                             <span class="inline-flex items-center px-3 text-sm  bg-iconbg-50 rounded-e-0 rounded-s-lg">
                                 <x-polaris-major-phone class="w-6 h-6 text-primarycolor-100 flex flex-row justify-center items-center font-bold" />
                             </span>
-                            <input type="number" required  inputmode="numeric" name="mobileno" id="mobilenodata" maxlength="11" minlength="11" class="rounded-lg focus:ring-1 focus:ring-primarycolor-100 border-primarycolor-100 focus:border-0  focus:ring-examportalsecondary-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="08132911690" />
+                            <input type="number" required  inputmode="numeric" name="mobileno" id="mobilenodata" maxlength="11" minlength="11" class="rounded-lg focus:ring-0 focus:ring-primarycolor-100 shadow-sm border bg-gray-50 border-gray-50  focus:border-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5"  placeholder="08132911690" />
                     </div>
                     <x-input-error :messages="$errors->get('mobileno')" class="text-xs" />
                 </div>    
@@ -76,7 +76,7 @@
                                 ₦
                             </span>
                         </span>
-                        <select name="plan" id="plan" required  class="rounded-lg border-primarycolor-100 focus:border-0  focus:ring-primarycolor-100  block flex-1 min-w-0 w-full text-xs  p-2.5" >
+                        <select name="plan" id="plan" required  class="rounded-lg focus:ring-0 focus:ring-primarycolor-100 shadow-sm border-gray-50 bg-gray-50   focus:border-primarycolor-100 block flex-1 min-w-0 w-full text-xs  p-2.5" >
                             <option value=""></option>
                             <option value="1gb">1GB -  ₦ 225</option>
                             <option value="2gb">2GB -  ₦ 450</option>
@@ -92,7 +92,7 @@
             <div class="flex flex-col justify-center items-center gap-1 w-full mt-1">
                 <label for="paymentpindata" class="text-xs">Enter 4 Digit PIN</label>
                 <div class="flex w-1/3">
-                    <input type="password" required name="pin" maxlength="4" minlength="4" inputmode="numeric"  id="paymentpindata" autocomplete="off" class="rounded-lg border-primarycolor-100 focus:border-0 text-center focus:ring-primarycolor-100  w-full p-2.5" placeholder="****" />
+                    <input type="password" required name="pin" maxlength="4" minlength="4" inputmode="numeric"  id="paymentpindata" autocomplete="off" class="rounded-lg focus:ring-0 bg-gray-50 focus:ring-primarycolor-100 shadow-sm border-gray-50  focus:border-primarycolor-100 text-center  w-full p-2.5" placeholder="****" />
                 </div>
                 <x-input-error :messages="$errors->get('pin')" class="text-xs" />
             </div>

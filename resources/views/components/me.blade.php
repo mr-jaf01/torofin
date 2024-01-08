@@ -41,7 +41,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-legal class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Transaction History</span>
@@ -53,7 +53,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-stop class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Account Limits</span>
@@ -66,7 +66,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-bank class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Bank Card/Account</span>
@@ -79,7 +79,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-minor-capture-payment class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Pay Me</span>
@@ -95,7 +95,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-secure class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Security Center</span>
@@ -107,7 +107,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-major-question-mark class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Support</span>
@@ -120,7 +120,7 @@
             <div class="flex flex-row items-center justify-between my-2">
                 
                 <div class="flex flex-row justify-center items-center gap-2">
-                    <span class="rounded-lg bg-iconbg-50 p-1">
+                    <span class="rounded-lg bg-gray-50 shadow-sm border p-1">
                         <x-polaris-minor-star-outline class="w-5 h-5 text-primarycolor-100" />
                     </span>
                     <span class="text-xs">Rate Us</span>
