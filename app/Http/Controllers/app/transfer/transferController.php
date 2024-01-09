@@ -151,9 +151,9 @@ class transferController extends Controller
                 $response = Http::withHeaders([
                     "Username" => env('USER_EMAIL'),
                     'Password' => env('USER_PASS'),
-                    "api-key" => env('API_KEY'),
-                    'secret-key' => env('SECRET_KEY')
-                ])->post(env('BASE_URL').'/api/merchant-verify', [
+                    "api-key" => env('LIVE_API_KEY'),
+                    'secret-key' => env('LIVE_SECRET_KEY')
+                ])->post(env('LIVE_BASE_URL').'/api/merchant-verify', [
                     "serviceID" => "bank-deposit",
                     "billersCode" => $request->recipient,
                     "type" => $request->bank,

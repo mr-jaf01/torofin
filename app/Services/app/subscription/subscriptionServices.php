@@ -102,9 +102,14 @@ class subscriptionServices {
 
     public function dataPurchase($sender_id, $network_type, $phone,  $amount, $plan)
     {
+        $userServices = new userServices();
+
         $check_sender = User::where('id', $sender_id)->first();
         $senderWallet = getwalletByUserId($check_sender->id);
         
+        $now = now()->setTimezone("Africa/Lagos");
+        $formattedtime = $now->format('YmdHi').Str::random(5).'torofin';
+
         if ($check_sender) {
 
               if($senderWallet->available_bal >= $amount)
@@ -112,7 +117,42 @@ class subscriptionServices {
 
                 if ($amount >= 50) {
 
-                    // API REQUEST TO Buy data OR OTHER BUSINESS LOGIC
+                    $userServices->debitWallet($senderWallet->id, $amount);
+                     
+                    $response = Http::withHeaders([
+
+                        "Token" => env('LIVE_AREWA_GLOBAL_API')
+    
+                    ])->post(env('LIVE_AREWA_GLOBAL_BASE_URL').'/api/data/', [
+    
+                        "phone" => $phone,
+                        "plan" => "113",
+                        "network" => $network_type,
+                        "ported_number" => "false"
+                    ]);
+                    
+
+
+                    if ($response['status'] === "success" && $response['Status'] === 'successful') 
+                    {
+                        $message = [
+                            "status" => 'success',
+                            'message' => 'Transaction Successful'
+                        ];
+
+                        return json_encode($message);
+                    }
+                    else
+                    {
+                        $message = [
+                            "status" => 'failed',
+                            'message' => 'Transaction Failed'
+                        ];
+
+                        $userServices->creditWallet($senderWallet->id, $amount);
+                        return json_encode($message);
+                        
+                    }
 
                     
                     

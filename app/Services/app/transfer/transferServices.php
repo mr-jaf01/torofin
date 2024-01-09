@@ -129,7 +129,7 @@ class transferServices {
                 'message' => 'Transaction Failed'
             ];
 
-            $userServices->creditWallet($senderwallet_id, $amount);
+            //$userServices->creditWallet($senderwallet_id, $amount);
             return json_encode($message);    
         }
     }
@@ -151,7 +151,7 @@ class transferServices {
 
                 if ($amount >= 50) {
 
-                    $userServices->debitWallet($senderWallet->id, $amount);
+                   // $userServices->debitWallet($senderWallet->id, $amount);
                      
                     $response = Http::withHeaders([
 

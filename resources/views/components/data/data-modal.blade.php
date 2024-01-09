@@ -18,7 +18,7 @@
 
                     <label for="mtndata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="mtn" name="network" id="mtndata">
+                            <input type="radio" value="1" name="network" id="mtndata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{asset('/assets/images/logo/mtn.png')}}" alt="mtn-logo" class="w-6 h-6 rounded-full">
@@ -27,7 +27,7 @@
                         
                     <label for="airteldata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="airtel" name="network" id="airteldata">
+                            <input type="radio" value="2" name="network" id="airteldata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{asset('/assets/images/logo/airtel.jpeg')}}" alt="airtel-logo" class="w-6 h-6 rounded-full">
@@ -36,7 +36,7 @@
                        
                     <label for="glodata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="glo" name="network" id="glodata">
+                            <input type="radio" value="3" name="network" id="glodata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{asset('/assets/images/logo/glo.jpeg')}}" alt="glo-logo" class="w-6 h-6 rounded-full">
@@ -45,7 +45,7 @@
 
                     <label for="9mobiledata" class="p-2 flex flex-col gap-1 border card-border-radius bg-gray-50 items-center">
                         <div class="flex flex-row justify-end">
-                            <input type="radio" value="etisalat" name="network" id="9mobiledata">
+                            <input type="radio" value="4" name="network" id="9mobiledata">
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{asset('/assets/images/logo/9mobile.jpeg')}}" alt="9mobile-logo" class="w-6 h-6 rounded-full">
